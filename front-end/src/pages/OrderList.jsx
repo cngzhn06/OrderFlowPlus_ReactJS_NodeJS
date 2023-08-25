@@ -13,6 +13,8 @@ const OrderList = () => {
       .then((response) => {
         const ordersData = response.data;
         setOrders(ordersData);
+        console.log("🚀 ~ file: OrderList.jsx:16 ~ .then ~ ordersData:", ordersData)
+        
       })
       .catch((error) => {
         console.error("ORDER YÖNLENDİRME HATASI:", error);

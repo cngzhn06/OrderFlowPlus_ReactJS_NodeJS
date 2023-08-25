@@ -36,6 +36,26 @@ const getUser = async (req,res) => {
   catch(error) { res.status(500).json({err : error.message})}
 }
 
+const userUpdate = async(req,res) => {
+  try{
+    const userId = req.params.userId
+    const updateUserData = req.body
+
+    const user = await User.findOne({where: {puser_id: userId}});
+
+    if(user){
+      await user.update(updateUserData);
+      res.json({msg:"güncellendi" , data:user})
+    }
+    else{
+      res.status(404).json({msg:"güncelleme patladı" , data:[] })
+    }
+  }
+  catch(err){
+    res.status(500).json({err : error.message})
+  }
+}
+
 const getOrders = async (req, res) => {
   try {
     const orders = await Order.findAll({
@@ -166,5 +186,6 @@ module.exports = {
   createOrder,
   updateOrderStatus,
   orderItem,
-  getUser
+  getUser,
+  userUpdate,
 };

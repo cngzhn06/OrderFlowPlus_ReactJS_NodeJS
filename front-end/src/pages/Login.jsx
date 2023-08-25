@@ -3,7 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LoginForm from '../components/LoginForm';
 import Footer from '../components/Footer';
 
-function Login() {
+const Login = () => {
+
+
     
   return (
     <div>

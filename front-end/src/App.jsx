@@ -3,7 +3,7 @@ import Login from './pages/Login'
 import ProductList from './pages/OrderList'
 import Products from './pages/ProductsPage'
 import Admin from './pages/Admin';
-
+import './app.css'
 import {
   BrowserRouter as Router,
   Route,
@@ -13,17 +13,20 @@ import {
 
 function App() {
 
+  
   return (
     <>
     {/* <Login/> */}
-      <Router>
-        <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path="/products" element={<Products/>}/>
-          <Route path="/orderList" element={<ProductList/>}/>
-          <Route path="/Admin" element={<Admin/>}/>
-        </Routes>
-    </Router>
+     <div className="imgsty">
+        <Router>
+            <Routes>
+              <Route path="/" element={<Login/>}/>
+              <Route path="/products" element={<Products/>}/>
+              <Route path="/orderList" element={<ProductList/>}/>
+              <Route path="/Admin" element={<Admin/>}/>
+            </Routes>
+        </Router>
+     </div>
     </> 
   )
 }

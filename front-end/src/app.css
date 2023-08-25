@@ -1,0 +1,20 @@
+.custom-card {
+    transition: all 0.3s ease-in-out;
+  }
+  
+.custom-card:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imgsty{
+  background-image: url("https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=1800&t=st=1692961644~exp=1692962244~hmac=fe529477b33b398a6620e9ed37a1ead7000fb46c6cdd1c0461e235249bec78cf");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
