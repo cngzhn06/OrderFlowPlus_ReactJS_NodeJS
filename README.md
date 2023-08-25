@@ -8,4 +8,4 @@ Order Management System with Role-based Access
 - Personnel can place orders
 - Waitstaff can view and approve orders
 
-** Expect frequent updates to this repository.
+** Expect frequent updates to this repository. **
