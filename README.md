@@ -1,4 +1,4 @@
-## OrderFlow Plus
+## Simple Order Flow
 
 Order Management System with Role-based Access
 
