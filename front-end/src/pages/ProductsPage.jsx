@@ -1,12 +1,10 @@
 import React from 'react';
-import ProductsComponent from '../components/Products'
-import Footer from '../components/Footer';
+import ProductsComponent from '../components/Products';
 
 const ProductsPage = () => {
   return (
     <div>
       <ProductsComponent />
-      <Footer/>
     </div>
   );
 };

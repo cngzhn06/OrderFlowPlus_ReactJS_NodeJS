@@ -51,13 +51,12 @@ const OrderTableRow = ({ order, updateOrderStatus }) => {
       <td>{order.description}</td>
       <td>{order.total_price}</td>
       <td>{moment(order.order_date).format("DD-MM-YYYY HH:mm:ss")}</td>
-      <td>{order.status}</td>
       <td>
         <input
           type="checkbox"
           checked={checked}
           onChange={handleCheckboxChange}
-           disabled={order.status === 1}  // Eğer status 1 ise checkbox'i devre dışı bırak
+           disabled={order.status === 1}
         />
       </td>
     </tr>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OrderTable from "../components/OrderTable";
 import axios from "axios";
-import Footer from "../components/Footer";
 
 const OrderList = () => {
   const [orders, setOrders] = useState([]);
@@ -12,6 +11,7 @@ const OrderList = () => {
       .get(ordersEndpoint)
       .then((response) => {
         const ordersData = response.data;
+        ordersData.reverse();
         setOrders(ordersData);
         console.log("🚀 ~ file: OrderList.jsx:16 ~ .then ~ ordersData:", ordersData)
         
@@ -33,7 +33,6 @@ const OrderList = () => {
   return (
     <div className="container">
       <OrderTable orders={orders} updateOrderStatus={updateOrderStatus} />
-      <Footer/>
     </div>
   );
 };

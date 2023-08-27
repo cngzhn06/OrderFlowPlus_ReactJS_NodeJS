@@ -10,6 +10,7 @@ const {
   orderItem,
   getUser,
   userUpdate,
+  createUser,
 } = require("./controller/control");
 const cors = require("cors");
 
@@ -28,7 +29,8 @@ app.post("/create-order", createOrder);
 app.put('/updateOrderStatus/:orderId', updateOrderStatus);
 app.post('/orderItem', orderItem);
 app.get('/getUsers', getUser);
-app.put('/updateUser/:userId', userUpdate)
+app.put('/updateUserData/:userId', userUpdate)
+app.post('/create-user',createUser),
 
 
 sequelize.sync().then(() => {

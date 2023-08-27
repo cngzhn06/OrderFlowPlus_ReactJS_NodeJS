@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import '../app.css';
 
 const AdminCart = () => {
+
   return (
     <>
     <h2 className='text-head text-center mt-3'>Admin Kontrol</h2>

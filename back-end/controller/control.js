@@ -36,6 +36,16 @@ const getUser = async (req,res) => {
   catch(error) { res.status(500).json({err : error.message})}
 }
 
+const getProducts = async (req, res) => {
+  try {
+    const products = await Product.findAll();
+
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 const userUpdate = async(req,res) => {
   try{
     const userId = req.params.userId
@@ -67,25 +77,6 @@ const getOrders = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-
-const getProducts = async (req, res) => {
-  try {
-    const products = await Product.findAll();
-
-    const nameCategory = products.map((product) => {
-      return {
-        name: product.name,
-        category: product.category,
-      };
-    });
-
-    res.json(products);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
 
 const orderItem = async (req, res) => {
   try {
@@ -129,6 +120,27 @@ const createOrder = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+const createUser = async (req, res) => {
+  try {
+    const { username, password, name, lastName, floor, role } = req.body;
+
+    const newUser = await User.create({
+      username: username,
+      password: password,
+      name: name,
+      lastName: lastName,
+      floor: floor,
+      role: role,
+    });
+
+    res.status(201).json({ success: true, message: "Kullanıcı oluştu", user: newUser });
+  } catch (error) {
+    console.error("hata:   ", error);
+    res.status(500).json({ success: false, message: "Kullanıcı oluştururken hata" });
+  }
+};
+
 
 
 const updateOrderStatus = async (req, res) => {
@@ -188,4 +200,5 @@ module.exports = {
   orderItem,
   getUser,
   userUpdate,
+  createUser,
 };

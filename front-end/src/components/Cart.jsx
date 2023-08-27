@@ -48,7 +48,7 @@ const Cart = ({ userData, cartItems, removeFromCart }) => {
     };
   
     const stockStatus = cartItems.filter(
-      (item) => item.stock - item.quantity < 1
+      (item) => item.stock - item.quantity < 0
     );
   
     if (stockStatus.length > 0) {
@@ -110,7 +110,7 @@ const Cart = ({ userData, cartItems, removeFromCart }) => {
             className="list-group-item d-flex justify-content-between align-items-center"
             key={index}
           >
-            {item.name} - {item.price} TL x {item.quantity}
+            {item.name} - {item.price} ₺ x {item.quantity}
             <button
               className="btn btn-sm btn-danger"
               onClick={() => removeFromCart(index)}
@@ -120,7 +120,7 @@ const Cart = ({ userData, cartItems, removeFromCart }) => {
           </li>
         ))}
       </ul>
-      <div className="text-center mt-3">Toplam: {getTotalPrice()} TL</div>
+      <div className="text-center mt-3">Toplam: {getTotalPrice()} ₺</div>
       <div className="text-center mt-3">
         <button className="btn btn-success" onClick={handleCheckout}>
           Sepeti Onayla

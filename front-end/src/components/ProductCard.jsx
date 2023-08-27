@@ -24,8 +24,7 @@ const ProductCard = ({ product, addToCart }) => {
           />
           <div className="card-body">
             <h5 className="card-title">{product.name}</h5>
-            <p className="card-text">{product.price} TL</p>
-            <p className="card-text">{product.category}</p>
+            <p className="card-text">{product.price} ₺</p>
           </div>
           <div className="card-footer p-1">
             <div className="row p-1">

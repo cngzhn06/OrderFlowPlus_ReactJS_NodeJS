@@ -67,14 +67,6 @@ const Products = () => {
           removeFromCart={removeFromCart}
         />
       </div>
-      <div className="row mt-3">
-        <div className="col-md-12 text-center">
-          <p className="text-muted">
-            Ürün fiyatları görünmüyorsa tarayıcı penceresini kaydırarak
-            görüntüleyebilirsiniz.
-          </p>
-        </div>
-      </div>
     </div>
   );
 };
