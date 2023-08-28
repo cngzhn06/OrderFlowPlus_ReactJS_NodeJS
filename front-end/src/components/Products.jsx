@@ -8,7 +8,7 @@ const Products = () => {
   const { state } = useLocation();
   const [cartItems, setCartItems] = useState([]);
   const [products, setProducts] = useState([]);
-  const [filteredProducts,setFilteredProducts] = useState([])
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
     axios
@@ -23,7 +23,7 @@ const Products = () => {
           category: product.category,
         }));
         setProducts(simplifiedProducts);
-       setFilteredProducts(simplifiedProducts)
+        setFilteredProducts(simplifiedProducts);
       })
       .catch((error) => {
         console.error("Ürün çekilirken hata oldu:", error);
@@ -44,19 +44,70 @@ const Products = () => {
     setCartItems(updatedCart);
   };
 
+  const showAllProducts = () => {
+    setFilteredProducts(products);
+  };
+
   return (
     <div className="container col-md-12">
       <h2 className="text-head text-center mt-3">Ürün Listesi</h2>
+      <div className="btn-group" style={{ margin: "10px" }}>
+        <button
+          className="btn btn-primary"
+          style={{
+            marginLeft: "5px",
+            marginRight: "5px",
+            backgroundColor: "white",
+            color: "black",
+          }}
+          onClick={showAllProducts}
+        >
+          Tüm Ürünler
+        </button>
+        <button
+          className="btn btn-primary"
+          style={{
+            marginRight: "5px",
+            marginLeft: "5px",
+            backgroundColor: "white",
+            color: "black",
+          }}
+          onClick={() => {
+            const filteredHotProducts = products.filter(
+              (product) => product.category === 0
+            );
+            setFilteredProducts(filteredHotProducts);
+          }}
+        >
+          Sıcak Ürünler
+        </button>
+        <button
+          className="btn btn-primary"
+          style={{
+            marginLeft: "5px",
+            backgroundColor: "white",
+            color: "black",
+          }}
+          onClick={() => {
+            const filteredColdProducts = products.filter(
+              (product) => product.category === 1
+            );
+            setFilteredProducts(filteredColdProducts);
+          }}
+        >
+          Soğuk Ürünler
+        </button>
+      </div>
+
       <div className="row">
         <div className="col-md-9 mt-5">
           <div className="row">
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
-                
               />
             ))}
           </div>

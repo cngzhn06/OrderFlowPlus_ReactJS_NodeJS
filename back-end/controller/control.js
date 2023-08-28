@@ -36,13 +36,23 @@ const getUser = async (req,res) => {
   catch(error) { res.status(500).json({err : error.message})}
 }
 
-const getProducts = async (req, res) => {
+const createUser = async (req, res) => {
   try {
-    const products = await Product.findAll();
+    const { username, password, name, lastName, floor, role } = req.body;
 
-    res.json(products);
+    const newUser = await User.create({
+      username: username,
+      password: password,
+      name: name,
+      lastName: lastName,
+      floor: floor,
+      role: role,
+    });
+
+    res.status(201).json({ success: true, message: "Kullanıcı oluştu", user: newUser });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error("hata:   ", error);
+    res.status(500).json({ success: false, message: "Kullanıcı oluştururken hata" });
   }
 };
 
@@ -65,6 +75,64 @@ const userUpdate = async(req,res) => {
     res.status(500).json({err : error.message})
   }
 }
+
+
+
+
+const getProducts = async (req, res) => {
+  try {
+    const products = await Product.findAll();
+
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+
+const productUpdate = async(req,res) => {
+  try{
+    const productId = req.params.productId
+    const updateProductData = req.body
+
+    const product = await Product.findOne({where: {product_id: productId}});
+
+    if(product){
+      await product.update(updateProductData);
+      res.json({msg:"güncellendi" , data:product})
+    }
+    else{
+      res.status(404).json({msg:"güncelleme patladı" , data:[] })
+    }
+  }
+  catch(err){
+    res.status(500).json({err : error.message})
+  }
+}
+
+const createProduct = async (req, res) => {
+  try {
+    const { name, price, stock, category, imgdir } = req.body;
+
+    const newProduct = await Product.create({
+      name: name,
+      price : price , 
+      stock : stock,
+      category : category,
+      imgdir : imgdir
+    });
+
+    res.status(201).json({ success: true, message: "Ürüm oluştu", product: newProduct });
+  } catch (error) {
+    console.error("hata:   ", error);
+    res.status(500).json({ success: false, message: "Ürün oluştururken hata" });
+  }
+};
+
+
+
+
+
 
 const getOrders = async (req, res) => {
   try {
@@ -120,28 +188,6 @@ const createOrder = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
-const createUser = async (req, res) => {
-  try {
-    const { username, password, name, lastName, floor, role } = req.body;
-
-    const newUser = await User.create({
-      username: username,
-      password: password,
-      name: name,
-      lastName: lastName,
-      floor: floor,
-      role: role,
-    });
-
-    res.status(201).json({ success: true, message: "Kullanıcı oluştu", user: newUser });
-  } catch (error) {
-    console.error("hata:   ", error);
-    res.status(500).json({ success: false, message: "Kullanıcı oluştururken hata" });
-  }
-};
-
-
 
 const updateOrderStatus = async (req, res) => {
   try {
@@ -201,4 +247,6 @@ module.exports = {
   getUser,
   userUpdate,
   createUser,
+  productUpdate,
+  createProduct,
 };

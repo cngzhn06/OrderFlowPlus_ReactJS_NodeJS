@@ -4,7 +4,6 @@ import ProductList from "./pages/OrderList";
 import Products from "./pages/ProductsPage";
 import Admin from "./pages/Admin";
 import ListUser from "./components/ListUser";
-import ListOrder from "./components/ListOrder";
 import ListProduct from "./components/ListProduct";
 
 import "./app.css";
@@ -22,7 +21,6 @@ function App() {
             <Route path="/orderList" element={<ProductList />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/users" element={<ListUser />} />
-            <Route path="/admin/orders" element={<ListOrder />} />
             <Route path="/admin/products" element={<ListProduct />} />
           </Routes>
         </Router>

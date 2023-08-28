@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ListProductRow from "./ListProductRow";
+import ProductModalAdd from "./ProductModalAdd";
 
 const ListProduct = () => {
   const [product, setProduct] = useState([]);
@@ -21,7 +22,7 @@ const ListProduct = () => {
   return (
     <div className="container">
       <h2 className="text-head text-center mt-1 p-5">ÜRÜNLER</h2>
-      <table className="table table-dark">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">Ürün Adı</th>
@@ -37,6 +38,7 @@ const ListProduct = () => {
                 ))}
         </tbody>
       </table>
+      <ProductModalAdd/>
     </div>
   );
 };

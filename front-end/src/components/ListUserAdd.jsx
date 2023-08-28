@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
-axios
 
 const ListUserAdd = ({ handleClose }) => {
 

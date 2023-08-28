@@ -10,7 +10,7 @@ const AdminCart = () => {
     <h2 className='text-head text-center mt-3'>Admin Kontrol</h2>
     <div className="d-flex justify-content-between">
         
-      <div className="col-md-3 col-sm-6 my-2">
+      <div className="col-md-4 col-sm-6 my-2">
         <div className="text-center">
           <Link to="/admin/users" className="card product-card p-3 custom-card">
             <div className="card-body">
@@ -20,17 +20,7 @@ const AdminCart = () => {
           </Link>
         </div>
       </div>
-      <div className="col-md-3 col-sm-6 my-2">
-        <div className="text-center">
-          <Link to="/admin/orders" className="card product-card p-3 custom-card">
-            <div className="card-body">
-              <RiShoppingCartLine size={90} />
-              <h5 className="card-title">Siparişler</h5>
-            </div>
-          </Link>
-        </div>
-      </div>
-      <div className="col-md-3 col-sm-6 my-2">
+      <div className="col-md-4 col-sm-6 my-2">
         <div className="text-center">
           <Link to="/admin/products" className="card product-card p-3 custom-card">
             <div className="card-body">

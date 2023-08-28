@@ -1,4 +1,5 @@
 import React from "react";
+import ProductModal from "./ProductModal";
 
 const ListProductRow = ({ product }) => {
   const catText = (category) => {
@@ -17,7 +18,7 @@ const ListProductRow = ({ product }) => {
       <td>{product.price} ₺</td>
       <td>{product.stock}</td>
       <td>{catText(product.category)}</td>
-      <td><button>güncelle</button></td>
+      <td><ProductModal product = {product} /></td>
     </tr>
   );
 };
