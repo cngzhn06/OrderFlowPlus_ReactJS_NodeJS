@@ -27,7 +27,7 @@ Order Management System with Role-based Access
 ![image](https://github.com/cngzhn06/Simple-Order-Flow--ReactJS-NodeJS/assets/95685025/f0f8105d-f94d-4838-9efe-a5599f8025b0)
 ![image](https://github.com/cngzhn06/Simple-Order-Flow--ReactJS-NodeJS/assets/95685025/5046a2aa-0c39-41b6-9897-6b03171d79c7)
 
--Admin Page - Product Page
+-Admin Page - Product Control
 ![image](https://github.com/cngzhn06/Simple-Order-Flow--ReactJS-NodeJS/assets/95685025/487912fc-bd1e-4866-ae5c-dec05d653c40)
 
 
