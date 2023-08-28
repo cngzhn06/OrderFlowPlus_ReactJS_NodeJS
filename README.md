@@ -33,4 +33,4 @@ Order Management System with Role-based Access
 
 
 
-** Expect frequent updates to this repository. **
+This repository frequently will be updated.
