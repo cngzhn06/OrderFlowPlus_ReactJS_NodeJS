@@ -31,6 +31,9 @@ Order Management System with Role-based Access
 ![image](https://github.com/cngzhn06/Simple-Order-Flow--ReactJS-NodeJS/assets/95685025/487912fc-bd1e-4866-ae5c-dec05d653c40)
 
 
+-ER DIAGRAMS
+![image](https://github.com/cngzhn06/Simple-Order-Flow--ReactJS-NodeJS/assets/95685025/6d8a9f5c-5deb-4ac6-b23c-4e63b73dd74b)
+
 
 
 This repository frequently will be updated.
